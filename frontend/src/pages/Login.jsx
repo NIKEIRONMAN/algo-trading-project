@@ -73,7 +73,8 @@ const Login = () => {
 
   const handleGoogleLogin = () => {
     console.log('[Login] Redirecting to Google OAuth...');
-    window.location.href = 'http://localhost:5000/api/auth/google';
+    const apiBase = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+    window.location.href = `${apiBase}/auth/google`;
   };
 
   const features = [
